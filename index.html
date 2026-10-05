@@ -1,76 +1,275 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HvanA Opinie</title>
-  <link rel="stylesheet" href="styles/styles.css">
-</head>
+    <title>Opinie | HvanA</title>
 
-<body>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
 
-  <header>
-    <h1>HvanA</h1>
+  <body>
+    <!-- =========================
+       HEADER
+  ========================== -->
 
-    <nav>
-      <a href="#">Nieuws</a>
-      <a href="#">Video</a>
-      <a href="#">Columns</a>
-      <a href="#">Opinie</a>
-      <a href="#">Podcast</a>
-    </nav>
-  </header>
+    <header class="site-header">
+      <a href="#" class="logo">HvanA</a>
 
-  <main>
+      <nav class="main-nav">
+        <a href="#">Nieuws</a>
+        <a href="#">Video</a>
+        <a href="#">Columns</a>
+        <a href="#" class="active">Opinie</a>
+        <a href="#">Podcast</a>
+      </nav>
 
-    <section class="intro">
-      <h2>Opinie</h2>
-      <p>Meningen en verhalen van studenten en medewerkers van de HvA.</p>
-    </section>
+      <div class="header-icons">
+        <a href="#">⌕</a>
+        <a href="#">☰</a>
+      </div>
+    </header>
 
-    <section class="uitgelicht">
-      <h2>Uitgelicht</h2>
+    <main>
+      <!-- =========================
+         OPINIE HERO
+    ========================== -->
 
-      <div class="afbeelding"></div>
+      <section class="hero">
+        <div class="hero-intro">
+          <h1>Opinie</h1>
 
-      <h3>Wat speelt er onder studenten en medewerkers?</h3>
+          <p>
+            Persoonlijke visies, columns en debat binnen de Hogeschool van
+            Amsterdam. Van studenten, medewerkers en gasten.
+          </p>
 
-      <p>
-        Lees verschillende meningen en verhalen van mensen binnen de HvA.
-      </p>
+          <div class="filters">
+            <button>Alle artikelen</button>
+            <button>Studenten</button>
+            <button>Medewerkers</button>
+            <button>Columns</button>
+          </div>
+        </div>
 
-      <a href="#">Lees meer</a>
-    </section>
+        <div class="hero-image">
+          <img
+            src="images/hva-gebouw.jpg"
+            alt="Gebouw van de Hogeschool van Amsterdam"
+          />
+        </div>
+      </section>
 
-    <section class="artikelen">
-      <h2>Meer opinie</h2>
+      <!-- =========================
+         UITGELICHT ARTIKEL
+    ========================== -->
 
-      <article>
-        <div class="afbeelding"></div>
-        <h3>Hoe maken we de HvA aantrekkelijker voor studenten?</h3>
-        <p>Lees de mening van studenten over de HvA.</p>
-      </article>
+      <section class="featured">
+        <img src="images/dansen.jpg" alt="Studenten die dansen" />
 
-      <article>
-        <div class="afbeelding"></div>
-        <h3>Wat kan er beter binnen het onderwijs?</h3>
-        <p>Studenten en medewerkers delen hun ervaringen.</p>
-      </article>
+        <div class="featured-content">
+          <span class="category">Opinie</span>
 
-      <article>
-        <div class="afbeelding"></div>
-        <h3>De HvA door de ogen van medewerkers</h3>
-        <p>Een ander perspectief op de hogeschool.</p>
-      </article>
-    </section>
+          <h2>
+            ‘Ga dansen. Acteren. Zingen. Doe iets waarvan je denkt: absoluut
+            niets voor mij’
+          </h2>
 
-  </main>
+          <p>
+            Studenten moeten elkaar ook buiten de muren van de hogeschool
+            opzoeken, vindt CREA-directeur Dennis van Galen.
+          </p>
 
-  <footer>
-    <p>HvanA</p>
-  </footer>
+          <a href="#">Lees artikel →</a>
+        </div>
+      </section>
 
-</body>
+      <!-- =========================
+         MEER OPINIE
+    ========================== -->
 
+      <section class="opinions">
+        <div class="section-heading">
+          <h2>Meer opinie</h2>
+          <a href="#">Alle opinieartikelen →</a>
+        </div>
+
+        <div class="article-grid">
+          <article class="article-card article-card-large">
+            <div class="article-image">
+              <span class="tag">Mening</span>
+
+              <img src="images/wk-hva.jpg" alt="" />
+            </div>
+
+            <h3>‘Het WK 2026 kan de HvA leren hoe verbondenheid werkt’</h3>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <span class="tag">Mening</span>
+
+              <img src="images/keuzes.jpg" alt="" />
+            </div>
+
+            <h3>
+              ‘Stel je verkiesbaar op de HvA, juist nu medezeggenschap zo
+              belangrijk is’
+            </h3>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <span class="tag">Mening</span>
+
+              <img src="images/vuur.jpg" alt="" />
+            </div>
+
+            <h3>‘Stop eens over die 2.600 euro aan collegegeld’</h3>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <span class="tag">Mening</span>
+
+              <img src="images/onderwijs.jpg" alt="" />
+            </div>
+
+            <h3>
+              ‘De hogeschool doet te weinig tegen de vermarkting van het
+              onderwijs’
+            </h3>
+          </article>
+
+          <article class="article-card">
+            <div class="article-image">
+              <span class="tag">Duurzaamheid</span>
+
+              <img src="images/ing.jpg" alt="" />
+            </div>
+
+            <h3>
+              ‘Dit is mijn nieuwe bank, maar eigenlijk zit hij niet zo lekker’
+            </h3>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================
+         COLUMNISTEN
+    ========================== -->
+
+      <section class="columnists">
+        <div class="section-heading">
+          <div>
+            <h2>Onze columnisten</h2>
+            <p>Vaste stemmen, nieuwe perspectieven.</p>
+          </div>
+
+          <a href="#">Bekijk alle columnisten →</a>
+        </div>
+
+        <div class="columnist-grid">
+          <article class="columnist">
+            <img src="images/columnist-1.jpg" alt="Paul van der Laan" />
+
+            <div>
+              <h3>Paul van der Laan</h3>
+              <p>Docent en onderzoeker</p>
+              <a href="#">Bekijk columns →</a>
+            </div>
+          </article>
+
+          <article class="columnist">
+            <img src="images/columnist-2.jpg" alt="Zoë de Wit" />
+
+            <div>
+              <h3>Zoë de Wit</h3>
+              <p>Student Business IT</p>
+              <a href="#">Bekijk columns →</a>
+            </div>
+          </article>
+
+          <article class="columnist">
+            <img src="images/columnist-3.jpg" alt="Milan de Jong" />
+
+            <div>
+              <h3>Milan de Jong</h3>
+              <p>Medewerker Studentzaken</p>
+              <a href="#">Bekijk columns →</a>
+            </div>
+          </article>
+
+          <article class="columnist">
+            <img src="images/columnist-4.jpg" alt="Sana el Aoumri" />
+
+            <div>
+              <h3>Sana el Aoumri</h3>
+              <p>Student Social Work</p>
+              <a href="#">Bekijk columns →</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================
+         NIEUWSBRIEF
+    ========================== -->
+
+      <section class="newsletter">
+        <div class="newsletter-content">
+          <h2>
+            Niks meer missen<br />
+            van HvanA?
+          </h2>
+
+          <form>
+            <label>
+              Voornaam
+              <input type="text" placeholder="Je voornaam" />
+            </label>
+
+            <label>
+              E-mailadres
+              <input type="email" placeholder="Je e-mailadres" />
+            </label>
+
+            <button type="submit">Mis geen updates! →</button>
+          </form>
+        </div>
+
+        <img src="images/studenten.jpg" alt="Studenten van de HvA" />
+      </section>
+    </main>
+
+    <!-- =========================
+       FOOTER
+  ========================== -->
+
+    <footer>
+      <div class="footer-links">
+        <div>
+          <a href="#">Over HvanA</a>
+          <a href="#">Auteurs</a>
+          <a href="#">Colofon</a>
+        </div>
+
+        <div>
+          <a href="#">Privacyverklaring</a>
+          <a href="#">Cookie voorkeuren</a>
+          <a href="#">Adverteren</a>
+          <a href="#">Werken bij HvanA</a>
+        </div>
+      </div>
+
+      <div class="footer-logo">HvanA</div>
+
+      <div class="footer-contact">
+        <a href="mailto:info@hvana.nl"> info@hvana.nl </a>
+
+        <p>Instagram · YouTube · LinkedIn · TikTok</p>
+      </div>
+    </footer>
+  </body>
 </html>

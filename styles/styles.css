@@ -1,75 +1,510 @@
+/* =========================
+   BASIS
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
+  color: #111;
 }
 
-header {
-  padding: 20px;
+img {
+  display: block;
+  width: 100%;
 }
 
-header h1 {
-  color: #1456db;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  color: black;
+a {
+  color: inherit;
   text-decoration: none;
 }
 
-.intro {
-  background-color: #1456db;
-  color: white;
-  padding: 50px 20px;
-  text-align: center;
+button,
+input {
+  font: inherit;
 }
 
-.intro h2 {
-  font-size: 60px;
+/* =========================
+   HEADER
+========================= */
+
+.site-header {
+  min-height: 4.5rem;
+  padding: 1rem 5%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: white;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+}
+
+.main-nav {
+  display: none;
+}
+
+.header-icons {
+  display: flex;
+  gap: 1rem;
+
+  font-size: 1.5rem;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  background: #0757e8;
+  color: white;
+}
+
+.hero-intro {
+  padding: 3rem 5%;
+}
+
+.hero h1 {
+  margin: 0;
+
+  font-size: clamp(4rem, 16vw, 8rem);
+  line-height: 0.9;
+}
+
+.hero-intro p {
+  max-width: 32rem;
+
+  margin: 1.5rem 0;
+
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.hero-image img {
+  height: 20rem;
+  object-fit: cover;
+}
+
+/* =========================
+   FILTERS
+========================= */
+
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filters button {
+  padding: 0.65rem 1rem;
+
+  border: 1px solid white;
+  border-radius: 2rem;
+
+  background: transparent;
+  color: white;
+
+  cursor: pointer;
+}
+
+.filters button:first-child {
+  background: white;
+  color: #0757e8;
+}
+
+/* =========================
+   FEATURED ARTICLE
+========================= */
+
+.featured {
+  display: grid;
+}
+
+.featured > img {
+  height: 20rem;
+  object-fit: cover;
+}
+
+.featured-content {
+  padding: 2rem 5%;
+
+  background: #edf4ff;
+}
+
+.category {
+  color: #0757e8;
+
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.featured h2 {
+  max-width: 18ch;
+
+  margin: 0.5rem 0 1rem;
+
+  color: #0757e8;
+
+  font-size: clamp(2rem, 7vw, 3rem);
+  line-height: 1;
+}
+
+.featured p {
+  max-width: 40ch;
+  line-height: 1.5;
+}
+
+.featured a {
+  display: inline-block;
+
+  margin-top: 1rem;
+
+  color: #0757e8;
+  font-weight: bold;
+}
+
+/* =========================
+   ALGEMENE SECTIES
+========================= */
+
+.opinions,
+.columnists {
+  padding: 4rem 5%;
+}
+
+.section-heading {
+  margin-bottom: 2rem;
+
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.section-heading h2 {
+  margin: 0;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+.section-heading > a {
+  color: #0757e8;
+  font-weight: bold;
+}
+
+/* =========================
+   ARTIKEL GRID
+========================= */
+
+.article-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.article-card {
+  border: 1px solid #eee;
+
+  background: white;
+}
+
+.article-image {
+  position: relative;
+}
+
+.article-image img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+
+  padding: 0.5rem 0.75rem;
+
+  background: black;
+  color: white;
+
+  font-size: 0.7rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.article-card h3 {
+  margin: 0;
+  padding: 1rem;
+
+  font-size: 1.25rem;
+}
+
+/* =========================
+   COLUMNISTEN
+========================= */
+
+.columnist-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.columnist {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.columnist img {
+  width: 5rem;
+  height: 5rem;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+}
+
+.columnist h3 {
   margin: 0;
 }
 
-.uitgelicht,
-.artikelen {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+.columnist p {
+  margin: 0.25rem 0 1rem;
 }
 
-.afbeelding {
+.columnist a {
+  padding: 0.5rem 0.8rem;
+
+  border: 1px solid #111;
+  border-radius: 2rem;
+
+  font-size: 0.8rem;
+}
+
+/* =========================
+   NEWSLETTER
+========================= */
+
+.newsletter {
+  display: grid;
+
+  background: #0757e8;
+  color: white;
+}
+
+.newsletter-content {
+  padding: 3rem 5%;
+}
+
+.newsletter h2 {
+  margin-top: 0;
+
+  font-size: clamp(2.5rem, 7vw, 4rem);
+}
+
+.newsletter form {
+  display: grid;
+  gap: 1rem;
+}
+
+.newsletter label {
+  display: grid;
+  gap: 0.4rem;
+
+  font-weight: bold;
+}
+
+.newsletter input {
   width: 100%;
-  height: 250px;
-  background-color: #ddd;
+  padding: 1rem;
+
+  border: 0;
 }
 
-article {
-  margin-top: 30px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #ccc;
+.newsletter button {
+  padding: 1rem 1.5rem;
+
+  border: 0;
+
+  background: #ffd600;
+
+  font-weight: bold;
+
+  cursor: pointer;
 }
+
+.newsletter > img {
+  height: 20rem;
+  object-fit: cover;
+}
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
-  background-color: #222;
+  padding: 3rem 5%;
+
+  display: grid;
+  gap: 3rem;
+
+  background: #050505;
   color: white;
-  padding: 30px;
-  text-align: center;
 }
 
-@media (max-width: 600px) {
-  nav {
-    flex-wrap: wrap;
+.footer-links {
+  display: flex;
+  gap: 3rem;
+}
+
+.footer-links div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-logo {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.footer-contact {
+  line-height: 1.8;
+}
+
+/* =================================================
+   BREAKPOINT
+   Vanaf hier wordt het desktop
+================================================= */
+
+@media (min-width: 800px) {
+  /* HEADER */
+
+  .main-nav {
+    display: flex;
+    gap: 2rem;
   }
 
-  .intro h2 {
-    font-size: 45px;
+  .main-nav a {
+    padding-block: 0.5rem;
   }
 
-  .uitgelicht,
-  .artikelen {
-    margin: 20px auto;
+  .main-nav .active {
+    color: #0757e8;
+    border-bottom: 2px solid #0757e8;
+  }
+
+  /* HERO */
+
+  .hero {
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .hero-intro {
+    padding: 5rem 7%;
+  }
+
+  .hero-image img {
+    height: 100%;
+  }
+
+  /* FEATURED */
+
+  .featured {
+    width: 90%;
+    max-width: 90rem;
+
+    margin: -2rem auto 0;
+
+    position: relative;
+
+    grid-template-columns: 1.4fr 1fr;
+  }
+
+  .featured > img {
+    height: 100%;
+    min-height: 27rem;
+  }
+
+  .featured-content {
+    padding: 3rem;
+  }
+
+  /* ARTIKELEN */
+
+  .opinions,
+  .columnists {
+    width: 90%;
+    max-width: 90rem;
+
+    margin-inline: auto;
+  }
+
+  .article-grid {
+    grid-template-columns: 1.3fr 1fr 1fr;
+  }
+
+  .article-card-large {
+    grid-row: span 2;
+  }
+
+  .article-card-large .article-image img {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* COLUMNISTEN */
+
+  .columnist-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .columnist {
+    align-items: flex-start;
+  }
+
+  /* NEWSLETTER */
+
+  .newsletter {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .newsletter-content {
+    padding-left: 10%;
+  }
+
+  .newsletter form {
+    grid-template-columns: 1fr 1fr auto;
+
+    align-items: end;
+  }
+
+  .newsletter > img {
+    height: 100%;
+    min-height: 22rem;
+  }
+
+  /* FOOTER */
+
+  footer {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    align-items: start;
+  }
+
+  .footer-logo {
+    text-align: center;
+  }
+
+  .footer-contact {
+    text-align: right;
   }
 }
