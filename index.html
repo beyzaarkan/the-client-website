@@ -10,12 +10,16 @@
   </head>
 
   <body>
+    <input type="checkbox" id="dark-mode" class="theme-checkbox" />
+
     <!-- =========================
        HEADER
   ========================== -->
 
     <header class="site-header">
-      <a href="#" class="logo">HvanA</a>
+      <a href="#" class="logo">
+        <img src="assets/hvana-logo.svg__i=AA" alt="HvanA" />
+      </a>
 
       <nav class="main-nav">
         <a href="#">Nieuws</a>
@@ -26,8 +30,17 @@
       </nav>
 
       <div class="header-icons">
-        <a href="#">⌕</a>
-        <a href="#">☰</a>
+        <label
+          for="dark-mode"
+          class="theme-toggle"
+          aria-label="Schakel donkere modus in of uit"
+        >
+          <span class="moon-icon" aria-hidden="true">☾</span>
+          <span class="sun-icon" aria-hidden="true">☀</span>
+        </label>
+
+        <a href="#" class="search-icon" aria-label="Zoeken">⌕</a>
+        <a href="#" class="menu-icon" aria-label="Menu openen">☰</a>
       </div>
     </header>
 
@@ -39,25 +52,6 @@
       <section class="hero">
         <div class="hero-intro">
           <h1>Opinie</h1>
-
-          <p>
-            Persoonlijke visies, columns en debat binnen de Hogeschool van
-            Amsterdam. Van studenten, medewerkers en gasten.
-          </p>
-
-          <div class="filters">
-            <button>Alle artikelen</button>
-            <button>Studenten</button>
-            <button>Medewerkers</button>
-            <button>Columns</button>
-          </div>
-        </div>
-
-        <div class="hero-image">
-          <img
-            src="images/hva-gebouw.jpg"
-            alt="Gebouw van de Hogeschool van Amsterdam"
-          />
         </div>
       </section>
 
@@ -66,7 +60,7 @@
     ========================== -->
 
       <section class="featured">
-        <img src="images/dansen.jpg" alt="Studenten die dansen" />
+        <img src="assets/dansen.png" alt="Studenten die dansen" />
 
         <div class="featured-content">
           <span class="category">Opinie</span>
@@ -95,22 +89,87 @@
           <a href="#">Alle opinieartikelen →</a>
         </div>
 
+        <div class="article-tools">
+          <label for="article-search">Zoek een opinieartikel</label>
+
+          <input
+            type="search"
+            id="article-search"
+            placeholder="Zoek bijvoorbeeld op collegegeld..."
+          />
+
+          <div class="filters" aria-label="Filter artikelen op onderwerp">
+            <button
+              type="button"
+              class="active"
+              data-filter="alles"
+              aria-pressed="true"
+            >
+              Alle artikelen
+            </button>
+
+            <button type="button" data-filter="onderwijs" aria-pressed="false">
+              Onderwijs
+            </button>
+
+            <button
+              type="button"
+              data-filter="studentenleven"
+              aria-pressed="false"
+            >
+              Studentenleven
+            </button>
+
+            <button type="button" data-filter="bestuur" aria-pressed="false">
+              Bestuur
+            </button>
+
+            <button
+              type="button"
+              data-filter="duurzaamheid"
+              aria-pressed="false"
+            >
+              Duurzaamheid
+            </button>
+          </div>
+
+          <p id="article-count" aria-live="polite"></p>
+        </div>
+
         <div class="article-grid">
-          <article class="article-card article-card-large">
+          <!-- ARTIKEL 1 -->
+          <article class="article-card">
+            <label class="save-button">
+              <input type="checkbox" aria-label="Bewaar dit artikel" />
+              <span class="heart-empty" aria-hidden="true">♡</span>
+              <span class="heart-filled" aria-hidden="true">♥</span>
+            </label>
+
             <div class="article-image">
               <span class="tag">Mening</span>
-
-              <img src="images/wk-hva.jpg" alt="" />
+              <img
+                src="assets/wk-hva.png"
+                alt="Studenten spelen basketbal op een plein"
+              />
             </div>
 
             <h3>‘Het WK 2026 kan de HvA leren hoe verbondenheid werkt’</h3>
           </article>
 
+          <!-- ARTIKEL 2 -->
           <article class="article-card">
+            <label class="save-button">
+              <input type="checkbox" aria-label="Bewaar dit artikel" />
+              <span class="heart-empty" aria-hidden="true">♡</span>
+              <span class="heart-filled" aria-hidden="true">♥</span>
+            </label>
+
             <div class="article-image">
               <span class="tag">Mening</span>
-
-              <img src="images/keuzes.jpg" alt="" />
+              <img
+                src="assets/verkiezingen-hva.png"
+                alt="Persoon staat tussen verschillende pijlen"
+              />
             </div>
 
             <h3>
@@ -119,98 +178,97 @@
             </h3>
           </article>
 
+          <!-- ARTIKEL 3 -->
           <article class="article-card">
+            <label class="save-button">
+              <input type="checkbox" aria-label="Bewaar dit artikel" />
+              <span class="heart-empty" aria-hidden="true">♡</span>
+              <span class="heart-filled" aria-hidden="true">♥</span>
+            </label>
+
             <div class="article-image">
               <span class="tag">Mening</span>
-
-              <img src="images/vuur.jpg" alt="" />
+              <img src="assets/collegegeld.png" alt="Een brandende vlam" />
             </div>
 
             <h3>‘Stop eens over die 2.600 euro aan collegegeld’</h3>
           </article>
 
+          <!-- ARTIKEL 4 -->
           <article class="article-card">
+            <label class="save-button">
+              <input type="checkbox" aria-label="Bewaar dit artikel" />
+              <span class="heart-empty" aria-hidden="true">♡</span>
+              <span class="heart-filled" aria-hidden="true">♥</span>
+            </label>
+
             <div class="article-image">
               <span class="tag">Mening</span>
-
-              <img src="images/onderwijs.jpg" alt="" />
+              <img
+                src="assets/studenten-enquete.png"
+                alt="Illustratie over vragen en antwoorden"
+              />
             </div>
 
             <h3>
-              ‘De hogeschool doet te weinig tegen de vermarkting van het
-              onderwijs’
+              ‘Waarom meedoen aan de Nationale Studenten Enquête wél belangrijk
+              is’
             </h3>
           </article>
 
+          <!-- ARTIKEL 5 -->
           <article class="article-card">
-            <div class="article-image">
-              <span class="tag">Duurzaamheid</span>
+            <label class="save-button">
+              <input type="checkbox" aria-label="Bewaar dit artikel" />
+              <span class="heart-empty" aria-hidden="true">♡</span>
+              <span class="heart-filled" aria-hidden="true">♥</span>
+            </label>
 
-              <img src="images/ing.jpg" alt="" />
+            <div class="article-image">
+              <span class="tag">Bestuur</span>
+              <img
+                src="assets/bestuurskunde-ai.png"
+                alt="Persoon gebruikt een telefoon met AI"
+              />
             </div>
 
             <h3>
-              ‘Dit is mijn nieuwe bank, maar eigenlijk zit hij niet zo lekker’
+              ‘We leren bij bestuurskunde veel te weinig over de omgang met AI’
+            </h3>
+          </article>
+
+          <!-- ARTIKEL 6 -->
+          <article class="article-card">
+            <label class="save-button">
+              <input type="checkbox" aria-label="Bewaar dit artikel" />
+              <span class="heart-empty" aria-hidden="true">♡</span>
+              <span class="heart-filled" aria-hidden="true">♥</span>
+            </label>
+
+            <div class="article-image">
+              <span class="tag">Mening</span>
+              <img
+                src="assets/opleidingskwaliteit.png"
+                alt="Persoon vult een vragenlijst in"
+              />
+            </div>
+
+            <h3>
+              ‘Zeg nee tegen de NSE: dit onderzoek zegt niets over de kwaliteit
+              van jouw opleiding’
             </h3>
           </article>
         </div>
-      </section>
+        <!-- Einde article-grid -->
 
-      <!-- =========================
-         COLUMNISTEN
-    ========================== -->
-
-      <section class="columnists">
-        <div class="section-heading">
-          <div>
-            <h2>Onze columnisten</h2>
-            <p>Vaste stemmen, nieuwe perspectieven.</p>
-          </div>
-
-          <a href="#">Bekijk alle columnisten →</a>
-        </div>
-
-        <div class="columnist-grid">
-          <article class="columnist">
-            <img src="images/columnist-1.jpg" alt="Paul van der Laan" />
-
-            <div>
-              <h3>Paul van der Laan</h3>
-              <p>Docent en onderzoeker</p>
-              <a href="#">Bekijk columns →</a>
-            </div>
-          </article>
-
-          <article class="columnist">
-            <img src="images/columnist-2.jpg" alt="Zoë de Wit" />
-
-            <div>
-              <h3>Zoë de Wit</h3>
-              <p>Student Business IT</p>
-              <a href="#">Bekijk columns →</a>
-            </div>
-          </article>
-
-          <article class="columnist">
-            <img src="images/columnist-3.jpg" alt="Milan de Jong" />
-
-            <div>
-              <h3>Milan de Jong</h3>
-              <p>Medewerker Studentzaken</p>
-              <a href="#">Bekijk columns →</a>
-            </div>
-          </article>
-
-          <article class="columnist">
-            <img src="images/columnist-4.jpg" alt="Sana el Aoumri" />
-
-            <div>
-              <h3>Sana el Aoumri</h3>
-              <p>Student Social Work</p>
-              <a href="#">Bekijk columns →</a>
-            </div>
-          </article>
-        </div>
+        <!-- PAGINANUMMERS -->
+        <nav class="pagination" aria-label="Artikelenpagina's">
+          <a href="index.html" aria-current="page">1</a>
+          <a href="pagina2.html">2</a>
+          <a href="pagina3.html">3</a>
+          <a href="pagina4.html">4</a>
+          <a href="pagina5.html">5</a>
+        </nav>
       </section>
 
       <!-- =========================
@@ -238,8 +296,6 @@
             <button type="submit">Mis geen updates! →</button>
           </form>
         </div>
-
-        <img src="images/studenten.jpg" alt="Studenten van de HvA" />
       </section>
     </main>
 

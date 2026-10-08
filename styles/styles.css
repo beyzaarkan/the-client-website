@@ -42,9 +42,10 @@ input {
   background: white;
 }
 
-.logo {
-  font-size: 1.8rem;
-  font-weight: 900;
+.logo img {
+  width: 8rem;
+  height: auto;
+  display: block;
 }
 
 .main-nav {
@@ -100,23 +101,21 @@ input {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 .filters button {
   padding: 0.65rem 1rem;
-
-  border: 1px solid white;
+  border: 1px solid #0757e8;
   border-radius: 2rem;
-
-  background: transparent;
-  color: white;
-
+  background: white;
+  color: #0757e8;
   cursor: pointer;
 }
 
 .filters button:first-child {
-  background: white;
-  color: #0757e8;
+  background: #0757e8;
+  color: white;
 }
 
 /* =========================
@@ -450,15 +449,7 @@ footer {
   }
 
   .article-grid {
-    grid-template-columns: 1.3fr 1fr 1fr;
-  }
-
-  .article-card-large {
-    grid-row: span 2;
-  }
-
-  .article-card-large .article-image img {
-    aspect-ratio: 4 / 3;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   /* COLUMNISTEN */
@@ -507,4 +498,246 @@ footer {
   .footer-contact {
     text-align: right;
   }
+}
+
+.article-tools label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#article-search {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 12px;
+  margin-bottom: 25px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.pagination a {
+  padding: 10px 15px;
+  border: 1px solid #0757e8;
+  border-radius: 5px;
+  color: #0757e8;
+}
+
+.pagination a[aria-current="page"] {
+  background: #0757e8;
+  color: white;
+}
+
+/* ARTIKELKAARTEN */
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.article-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.article-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+}
+
+.article-card h3 {
+  flex-grow: 1;
+}
+
+/* MOBIEL */
+
+@media (max-width: 799px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ARTIKEL OPSLAAN */
+
+.article-card {
+  position: relative;
+}
+
+.save-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+
+  font-size: 28px;
+  color: #0757e8;
+  cursor: pointer;
+}
+
+.save-button input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.save-button .heart-filled {
+  display: none;
+}
+
+.save-button input:checked ~ .heart-empty {
+  display: none;
+}
+
+.save-button input:checked ~ .heart-filled {
+  display: inline;
+  color: #0757e8;
+}
+
+.save-button:focus-within {
+  outline: 2px solid #0757e8;
+  outline-offset: 3px;
+}
+
+/* =========================
+   DARK MODE KNOP
+========================= */
+
+.theme-checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.theme-toggle {
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+}
+
+.sun-icon {
+  display: none;
+}
+
+.theme-checkbox:checked ~ .site-header .moon-icon {
+  display: none;
+}
+
+.theme-checkbox:checked ~ .site-header .sun-icon {
+  display: inline;
+}
+
+.theme-checkbox:focus-visible ~ .site-header .theme-toggle {
+  outline: 2px solid #0757e8;
+  outline-offset: 4px;
+}
+
+/* =========================
+   DONKERE MODUS
+========================= */
+
+body:has(#dark-mode:checked) {
+  background: #111;
+  color: white;
+}
+
+body:has(#dark-mode:checked) .site-header {
+  background: #1c1c1c;
+  color: white;
+}
+
+body:has(#dark-mode:checked) .article-card {
+  background: #222;
+  color: white;
+  border-color: #444;
+}
+
+body:has(#dark-mode:checked) .featured-content {
+  background: #222;
+  color: white;
+}
+
+body:has(#dark-mode:checked) .featured h2,
+body:has(#dark-mode:checked) .featured a,
+body:has(#dark-mode:checked) .category {
+  color: #79aaff;
+}
+
+body:has(#dark-mode:checked) .filters button {
+  background: #222;
+  color: white;
+  border-color: #79aaff;
+}
+
+body:has(#dark-mode:checked) .filters button.active {
+  background: #0757e8;
+}
+
+body:has(#dark-mode:checked) #article-search {
+  background: #222;
+  color: white;
+  border: 1px solid #777;
+}
+
+body:has(#dark-mode:checked) .pagination a {
+  color: #79aaff;
+}
+
+body:has(#dark-mode:checked) .pagination a[aria-current="page"] {
+  color: white;
+}
+
+body:has(#dark-mode:checked) .section-heading > a {
+  color: #79aaff;
+}
+
+/* Hamburgermenu alleen op mobiel */
+
+.menu-icon {
+  display: inline-block;
+}
+
+@media (min-width: 800px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
+.search-icon {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+
+/* Dark/light knop iets naar beneden */
+
+.theme-toggle {
+  position: relative;
+  top: 4px;
 }
